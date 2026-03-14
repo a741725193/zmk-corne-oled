@@ -73,22 +73,6 @@
         };
     };
 
-    macros {
-        L_RU: L_RU {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp LEFT_SHIFT &kp NUMBER_2>;
-            label = "L_RU";
-        };
-
-        L_EN: L_EN {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp LEFT_SHIFT &kp NUMBER_1>;
-            label = "L_EN";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -119,10 +103,10 @@
         raise_layer {
             display-name = "RAISE";
             bindings = <
-&kp ESCAPE  &kp EXCL  &kp AT   &kp UNDERSCORE  &kp PLUS   &kp PAGE_UP                                  &mmv MOVE_UP                     &kp CARET  &kp AMPS    &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans      &kp HOME  &kp END  &kp MINUS       &kp EQUAL  &kp PAGE_DOWN                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans      &trans    &trans   &L_EN           &L_RU      &kp SEMICOLON  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                               &trans          &trans     &trans                                                                        &kp SPACE  &kp DELETE  &trans
+&kp ESCAPE  &kp EXCL  &kp AT   &kp UNDERSCORE        &kp PLUS              &kp PAGE_UP                                  &mmv MOVE_UP                     &kp CARET  &kp AMPS    &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans      &kp HOME  &kp END  &kp MINUS             &kp EQUAL             &kp PAGE_DOWN                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans      &trans    &trans   &kp LA(LS(NUMBER_1))  &kp LA(LS(NUMBER_2))  &kp SEMICOLON  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                               &trans                &trans                &trans                                                                        &kp SPACE  &kp DELETE  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
